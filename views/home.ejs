@@ -1,0 +1,21 @@
+<%- include("partials/header") -%> 
+
+<section id="home">
+    <h1>Home</h1>
+<p> <%= homeContent %> </p>
+
+<h4>**Through this site we want students to share their review,problems they face.This can act as a medium of communication between students and authorities</h4>
+<br>
+
+<a href="compose"><button class="btn btn-success btn-lg active btn-block" >Add Post</button></a>
+</section>
+
+
+
+
+<%posts.forEach(function (element) { %>
+    <h4> <%=element.title%> </h4>
+    <p style="display: inline;"> <%=element.content.substring(0,20) + "..."%> </p> <a href="post/<%=element.title%>" style="display: inline;">read more</a>
+    <%  });%>
+
+<%- include("partials/footer") -%> 
